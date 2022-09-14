@@ -1,4 +1,4 @@
-#include "main"
+#include "main.h"
 
 /**
  * _isalpha - checks for alphabetical letters
@@ -11,6 +11,7 @@ int _isalpha(int c)
 	int u;
 	int count;
 
+	count = 0;
 	for (l = 97; l <= 122; l++)
 	{
 		if (c == l)
