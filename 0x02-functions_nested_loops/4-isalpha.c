@@ -7,5 +7,29 @@
  */
 int _isalpha(int c)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	int l;
+	int u;
+	int count;
+
+	for (l = 97; l <= 122; l++)
+	{
+		if (c == l)
+		{
+		count++;
+		break;
+		}
+	}
+	for (u = 65; u <= 91; u++)
+	{
+		if (c == u)
+		{
+			count++;
+			break;
+		}
+	}
+	if (count == 0)
+		return (0);
+	else
+		return (1);
 }
+
