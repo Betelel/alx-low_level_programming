@@ -30,10 +30,10 @@ int main(void)
 			}
 			else
 			{
-				printf("Buzz")
+				printf("Buzz");
 			}
 		}
 	}
-		print("\n");
+		printf("\n");
 		return (0);
 }
