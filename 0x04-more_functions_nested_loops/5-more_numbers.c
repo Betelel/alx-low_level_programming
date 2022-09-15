@@ -19,7 +19,8 @@ void more_numbers(void)
 			{
 				putchar((b / 10) + '0');
 			}
-			putchar(10);
+			putchar((b % 10) + '0');
 		}
+			putchar(10);
 	}
 }
