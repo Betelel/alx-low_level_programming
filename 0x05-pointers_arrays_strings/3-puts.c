@@ -1,15 +1,18 @@
 #include "main.h"
+#include <string.h>
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * _puts - prints a string
+ * @str: a stirng
+ * Return: void
  */
-int main(void)
+void _puts(char *str)
 {
-    char *str;
+	unsigned long int i;
 
-        str = "I do not fear computers. I fear the lack of them - Isaac Asimov";
-		    _puts(str);
-		    return (0);
+	for (i = 0; i < strlen(str); i++)
+	{
+		_putchar(str[i]);
+	}
+	_putchar('\n');
 }
