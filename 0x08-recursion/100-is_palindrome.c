@@ -1,29 +1,47 @@
 #include "main.h"
 
 /**
- * wildcmp - compares two strings.
- * @s1: string 1.
- * @s2: string 2. It can contains a * as a special character.
- * Return: 1 if are identical, 0 if not.
+ * _strlen - return length of string
+ * @str: string to check
+ *
+ * Return: length of str
  */
-int wildcmp(char *s1, char *s2)
+int _strlen(char *str)
 {
-	if (*s1 == '\0')
-	{
-		if (*s2 != '\0' && *s2 == '*')
-		{
-			return (wildcmp(s1, s2 + 1));
-		}
-		return (*s2 == '\0');
-	}
+	if (*str == '\0')
+		return (0);
+	else
+		return (1 + _strlen(str + 1));
+}
 
-	if (*s2 == '*')
-	{
-		return (wildcmp(s1 + 1, s2) || wildcmp(s1, s2 + 1));
-	}
-	else if (*s1 == *s2)
-	{
-		return (wildcmp(s1 + 1, s2 + 1));
-	}
-	return (0);
+/**
+ * check_palindrome - checks palindrome
+ * @l: left hand index
+ * @r: right hand index
+ * @p: possible palindrome
+ *
+ * Return: 1 if palindrome 0 if not
+ */
+int check_palindrome(int l, int r, char *p)
+{
+	if (l >= r)
+		return (1);
+	else if (p[l] != p[r])
+		return (0);
+	else
+		return (check_palindrome(l + 1, r - 1, p));
+}
+
+/**
+ * is_palindrome - states if a string is a palindrome
+ * @s: string to check
+ *
+ * Return: 1 if palindrome, 0 if not
+ */
+int is_palindrome(char *s)
+{
+	int i;
+
+	i = _strlen(s) - 1;
+	return (check_palindrome(0, i, s));
 }
