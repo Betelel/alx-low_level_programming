@@ -1,5 +1,5 @@
-#include 
 #include "function_pointers.h"
+
 /**
  * int_index - searchs the index for the giben number
  * @array: the array of numbers
