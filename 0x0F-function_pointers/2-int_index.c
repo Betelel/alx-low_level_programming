@@ -1,28 +1,25 @@
 #include "function_pointers.h"
 
 /**
- * int_index - searchs the index for the giben number
- * @array: the array of numbers
- * @size: the size of the array
- * @cmp: a function to compare the elements in the array
- * Return: the index of the mathced number
+ * int_index - function that searches for an integer
+ * @array: input array
+ * @size: number of elements in the array
+ * @cmp: pointer to the function to be used to compare values
+ * Return: 0
  */
+
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	int count;
+	int i;
 
-	count = 0;
-	if (size <= 0)
-		return (-1);
-	if (array != NULL && cmp != NULL)
+	if (array != 0 && cmp != 0)
 	{
-		int i;
-
+		if (size <= 0)
+			return (-1);
 		for (i = 0; i < size; i++)
 		{
-			if (count != 0)
-				return (i - 1);
-			count = (cmp(array[i]));
+			if (cmp(array[i]))
+				return (i);
 		}
 	}
 	return (-1);
