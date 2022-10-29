@@ -1,23 +1,20 @@
 #include "main.h"
 
 /**
- * set_bit - index.
- * @n: number.
- * @index: index index.
- * Return: output recursion.
+ * set_bit - gets bit on index `index`
+ * @n: decimal number
+ * @index: index of the bit
+ * Return: 1 or -1
  */
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int start = 1;
+	int bit = 1;
 
-	if ((sizeof(unsigned long int) * 8) - 1 < index)
-	{
+	if (index > 64)
 		return (-1);
-	}
 
-	start <<= index;
-	*n = *n | start;
-
+	bit = bit << index;
+	*n = (*n | bit);
 	return (1);
 }
